@@ -1533,11 +1533,21 @@ class macroed(wx.Dialog):
         
 class options(wx.Dialog):
     """Options editor"""
+    def __init__(self):
+        wx.Frame.__init__(self, None, -1, self.title)
+        sizer = self.CreateSizerAndWindows()
+        self.SetSizer(sizer)
+        self.Fit()
+    
+    
     def __init__(self,pronterface):
-        wx.Dialog.__init__(self, None, title=_("Edit settings"))
+        wx.Dialog.__init__(self, None, -1, title=_("Edit settings"))
+        sizer = self.CreateSizerAndWindows()
+        self.SetSizer(sizer)
+        self.Fit()
         topsizer=wx.BoxSizer(wx.VERTICAL)
         vbox=wx.StaticBoxSizer(wx.StaticBox(self, label=_("Defaults")) ,wx.VERTICAL)
-        topsizer.Add(vbox,1,wx.ALL | wx.EXPAND)
+        topsizer.Add(vbox,1,wx.ALL+wx.EXPAND)
         grid=wx.GridSizer(rows=0,cols=2,hgap=8,vgap=2)
         vbox.Add(grid,0,wx.EXPAND)
         ctrls = {}
