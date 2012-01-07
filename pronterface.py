@@ -1537,7 +1537,7 @@ class options(wx.Dialog):
         wx.Dialog.__init__(self, None, title=_("Edit settings"))
         topsizer=wx.BoxSizer(wx.VERTICAL)
         vbox=wx.StaticBoxSizer(wx.StaticBox(self, label=_("Defaults")) ,wx.VERTICAL)
-        topsizer.Add(vbox,1,wx.ALL+wx.EXPAND)
+        topsizer.Add(vbox,1,wx.ALL | wx.EXPAND)
         grid=wx.GridSizer(rows=0,cols=2,hgap=8,vgap=2)
         vbox.Add(grid,0,wx.EXPAND)
         ctrls = {}
