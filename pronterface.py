@@ -1220,7 +1220,7 @@ class PronterWindow(wx.Frame,pronsole.pronsole):
             #print len(self.cout.getvalue().split())
             self.stopsf=1
         except:
-            print _("Skeinforge/Slic3r execution failed.")
+            print _("Failed to execute slicing software: ")
             self.stopsf=1
             traceback.print_exc(file=sys.stdout)
         
