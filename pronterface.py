@@ -1533,18 +1533,8 @@ class macroed(wx.Dialog):
         
 class options(wx.Dialog):
     """Options editor"""
-    def __init__(self):
-        wx.Frame.__init__(self, None, -1, self.title)
-        sizer = self.CreateSizerAndWindows()
-        self.SetSizer(sizer)
-        self.Fit()
-    
-    
     def __init__(self,pronterface):
-        wx.Dialog.__init__(self, None, -1, title=_("Edit settings"))
-        sizer = self.CreateSizerAndWindows()
-        self.SetSizer(sizer)
-        self.Fit()
+        wx.Dialog.__init__(self, None, title=_("Edit settings"), style=wx.DEFAULT_DIALOG_STYLE|wx.RESIZE_BORDER)
         topsizer=wx.BoxSizer(wx.VERTICAL)
         vbox=wx.StaticBoxSizer(wx.StaticBox(self, label=_("Defaults")) ,wx.VERTICAL)
         topsizer.Add(vbox,1,wx.ALL+wx.EXPAND)
