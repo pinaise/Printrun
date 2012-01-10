@@ -1372,6 +1372,7 @@ class PronterWindow(wx.Frame,pronsole.pronsole):
         #print "generated 3d view in %f s"%(time.time()-t0)
         self.gviz.showall=1
         wx.CallAfter(self.gviz.Refresh)
+        gviz.measurements(Xmin, Xmax, Ymin, Ymax)
                 
     def printfile(self,event):
         if self.paused:
