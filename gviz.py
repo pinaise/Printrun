@@ -84,6 +84,15 @@ class gviz(wx.Panel):
         self.dirty=1
         self.blitmap=wx.EmptyBitmap(self.GetClientSize()[0],self.GetClientSize()[1],-1)
         
+    def Measurements(Xmin,Xmax,Ymin,Ymax):
+    	self.Xmin = Xmin
+		self.Xmax = Xmax
+		self.Ymin = Ymin
+		self.Ymax = Ymax
+		self.zoom(self, Xmax - Xmin, Ymax - Ymin, 100)
+		print'tesssssssssssssssssssssssssstMEASUREMENTS'
+		return    
+    
     def clear(self):
         self.lastpos=[0,0,0,0,0,0,0]
         self.lines={}
